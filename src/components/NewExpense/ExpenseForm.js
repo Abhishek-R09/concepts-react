@@ -19,11 +19,11 @@ const ExpenseForm = (props) => {
     event.preventDefault();
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
-    // console.log(expenseData);
     props.onAddExpense(expenseData);
+    props.onFormSubmitToggle();
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
@@ -62,6 +62,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={() => props.onFormSubmitToggle()}>
+          CANCEL
+        </button>
         <button type="submit">ADD EXPENSE</button>
       </div>
     </form>
