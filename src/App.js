@@ -12,10 +12,10 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <>
       <AddUser onUserDetailsSubmit={addUserHandler} />
       <UsersList users={users} />
-    </div>
+    </>
   );
 };
 
